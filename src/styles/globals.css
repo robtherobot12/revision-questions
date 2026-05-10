@@ -1,11 +1,212 @@
 @import "tailwindcss";
 
-@layer base {
-body{
-    @apply text-[#02010A] font-mono;
+:root {
+  --bg: #f5f4f0;
+  --bg-card: #ffffff;
+  --bg-card-answer: #f9f8f5;
+  --border: #e0ddd4;
+  --border-strong: #ccc9be;
+  --text-primary: #02010A;
+  --text-secondary: #5a5850;
+  --text-muted: #9a9890;
+  --btn-bg: #0D00A4;
+  --btn-hover: #0C008F;
+  --code-bg: #f0efe9;
+  --code-border: #dddad0;
+  --code-text: #3a1f6e;
+  --inline-code-bg: #eeecf5;
+  --inline-code-text: #3a1f6e;
 }
 
-button {
-    @apply bg-[#0D00A4] text-white px-4 py-2 hover:cursor-pointer hover:bg-[#0C008F] transition-all;
+.dark {
+  --bg: #0f0e14;
+  --bg-card: #1a1925;
+  --bg-card-answer: #161522;
+  --border: #2e2c3e;
+  --border-strong: #3d3b52;
+  --text-primary: #e8e6f0;
+  --text-secondary: #9b99aa;
+  --text-muted: #5e5c6e;
+  --btn-bg: #4f3fff;
+  --btn-hover: #3d2fdd;
+  --code-bg: #12111c;
+  --code-border: #2a2840;
+  --code-text: #b8a4ff;
+  --inline-code-bg: #1e1c2e;
+  --inline-code-text: #b8a4ff;
 }
+
+@layer base {
+  body {
+    @apply font-mono;
+    background-color: var(--bg);
+    color: var(--text-primary);
+    transition: background-color 0.25s ease, color 0.25s ease;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  button {
+    background-color: var(--btn-bg);
+    color: white;
+    @apply px-4 py-2 hover:cursor-pointer transition-all;
+    font-family: inherit;
+    font-size: 0.8125rem;
+    letter-spacing: 0.01em;
+  }
+
+  button:hover {
+    background-color: var(--btn-hover);
+  }
+}
+
+/* Theme toggle */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  user-select: none;
+}
+
+.toggle-track {
+  position: relative;
+  width: 36px;
+  height: 20px;
+  background-color: var(--border-strong);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dark .toggle-track {
+  background-color: var(--btn-bg);
+}
+
+.toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  background: white;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.dark .toggle-thumb {
+  transform: translateX(16px);
+}
+
+/* Question card */
+.question-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.question-card p,
+.question-card ul,
+.question-card ol {
+  margin: 0 0 0.5em;
+  font-size: 0.875rem;
+}
+
+.question-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* Answer card */
+.answer-card {
+  background-color: var(--bg-card-answer);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--btn-bg);
+  border-radius: 0 8px 8px 0;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+  min-height: 4rem;
+}
+
+.answer-card p,
+.answer-card ul,
+.answer-card ol {
+  margin: 0 0 0.5em;
+  font-size: 0.875rem;
+}
+
+.answer-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* Code blocks in answer */
+.answer-card pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  overflow-x: auto;
+  margin: 0.75em 0;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.answer-card pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--code-text);
+  font-family: inherit;
+}
+
+.answer-card code {
+  background-color: var(--inline-code-bg);
+  color: var(--inline-code-text);
+  border-radius: 4px;
+  padding: 0.15em 0.4em;
+  font-size: 0.8125rem;
+}
+
+.answer-card strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.answer-card em {
+  color: var(--text-secondary);
+}
+
+.answer-card blockquote {
+  border-left: 2px solid var(--border-strong);
+  margin: 0.5em 0;
+  padding-left: 1em;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Answer placeholder (hidden state) */
+.answer-placeholder {
+  min-height: 4rem;
+  border-radius: 8px;
+  border: 1px dashed var(--border);
+  opacity: 0.4;
+  transition: border-color 0.25s ease;
+}
+
+/* Reveal button — fixed height so it never shifts */
+.reveal-btn {
+  min-width: 160px;
+  text-align: center;
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
 }
