@@ -1,27 +1,67 @@
 import React, { useState, useEffect } from 'react'
 import Markdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import remarkMath from 'remark-math'
+import rehypeKatex from 'rehype-katex'
 
-export default function Flashcard({question, answer}) {
+import 'katex/dist/katex.min.css'
 
-    const [showAns, setShowAns] = useState(false)
+export default function Flashcard({ question, answer }) {
 
-    useEffect(() => {
-      setShowAns(false)
-    }, [question])
-    
+  const [showAns, setShowAns] = useState(false)
+
+  useEffect(() => {
+    setShowAns(false)
+  }, [question])
 
   return (
-    <div className='w-2/3 flex flex-col justify-center items-center text-center gap-5'>
-        
-        <div className="flex flex-col justify-center items-center gap-3">
-            <Markdown>{question}</Markdown>
-            {
-                showAns ?
-                <Markdown>{answer}</Markdown>
-                : <></>
-            }
-        </div>
-        <button className='hover:cursor-pointer px-4 py-2' onClick={(e) => setShowAns(!showAns)}>Reveal Answer</button>
+    <div className='w-full max-w-2xl flex flex-col gap-4 px-4'>
+
+      {/* Question box */}
+      <div className='question-card'>
+        <Markdown
+          remarkPlugins={[remarkGfm, remarkMath]}
+          rehypePlugins={[rehypeKatex]}
+        >
+          {question}
+        </Markdown>
+      </div>
+
+      {/* Reveal / hide button */}
+      <div className='flex justify-start'>
+        <button
+          className='reveal-btn'
+          onClick={() => setShowAns(prev => !prev)}
+        >
+          {showAns ? 'Hide answer' : 'Reveal answer'}
+        </button>
+      </div>
+
+      {/* Answer area */}
+      <div
+        style={{
+          minHeight: '4rem',
+          transition: 'opacity 0.2s ease',
+          opacity: showAns ? 1 : 0,
+          pointerEvents: showAns ? 'auto' : 'none',
+        }}
+      >
+        {showAns && (
+          <div className='answer-card'>
+            <Markdown
+              remarkPlugins={[remarkGfm, remarkMath]}
+              rehypePlugins={[rehypeKatex]}
+            >
+              {answer}
+            </Markdown>
+          </div>
+        )}
+
+        {!showAns && (
+          <div className='answer-placeholder' />
+        )}
+      </div>
+
     </div>
   )
 }

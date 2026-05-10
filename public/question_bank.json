@@ -1,0 +1,788 @@
+[
+  {
+    "id": "1",
+    "question": "Define or explain: Micro-architecture",
+    "solution": "The internal implementation of a processor, including its datapath, control logic, pipelines, caches, and other hardware structures used to execute an ISA.",
+    "category": "Defintions"
+  },
+  {
+    "id": "2",
+    "question": "Define or explain: Instruction Set Architecture (ISA)",
+    "solution": "The programmer-visible contract of a processor, including instructions, registers, addressing modes, data types, and instruction encodings.",
+    "category": "Defintions"
+  },
+  {
+    "id": "3",
+    "question": "Define or explain: Opcode",
+    "solution": "The part of an instruction that specifies which operation the processor should perform.",
+    "category": "Defintions"
+  },
+  {
+    "id": "4",
+    "question": "Define or explain: Operand",
+    "solution": "A value, register, memory address, or immediate constant used as input to an instruction or written as its result.",
+    "category": "Defintions"
+  },
+  {
+    "id": "5",
+    "question": "Define or explain: ISA addressing modes",
+    "solution": "The ways an instruction can specify where its operands come from, such as immediate values, registers, memory addresses, or address calculations.",
+    "category": "Defintions"
+  },
+  {
+    "id": "6",
+    "question": "Define or explain: Data Path",
+    "solution": "The processor hardware that stores and transforms data, such as registers, buses, multiplexers, ALUs, and memory interfaces.",
+    "category": "Defintions"
+  },
+  {
+    "id": "7",
+    "question": "Define or explain: Control Path",
+    "solution": "The hardware or microcode that generates control signals to make the datapath perform the steps required by each instruction.",
+    "category": "Defintions"
+  },
+  {
+    "id": "8",
+    "question": "Define or explain: Decode",
+    "solution": "The stage where an instruction's binary encoding is interpreted to identify its operation, operands, and required control actions.",
+    "category": "Defintions"
+  },
+  {
+    "id": "9",
+    "question": "Define or explain: Control",
+    "solution": "The coordination of processor components using signals that select operations, move data, update state, and sequence instruction execution.",
+    "category": "Defintions"
+  },
+  {
+    "id": "10",
+    "question": "Define or explain: 2-phase clock",
+    "solution": "A clocking scheme with two non-overlapping phases, often used so different parts of a circuit can read and update state in a controlled order.",
+    "category": "Defintions"
+  },
+  {
+    "id": "11",
+    "question": "Define or explain: Hardwired control",
+    "solution": "A control unit implemented directly with combinational and sequential logic rather than stored micro-instructions.",
+    "category": "Defintions"
+  },
+  {
+    "id": "12",
+    "question": "Define or explain: Micro-programmed control",
+    "solution": "A control unit that executes stored micro-instructions to generate the control signals for each machine instruction.",
+    "category": "Defintions"
+  },
+  {
+    "id": "13",
+    "question": "Define or explain: Micro-instructions",
+    "solution": "Low-level control words that directly specify datapath actions and sequencing inside a micro-programmed processor.",
+    "category": "Defintions"
+  },
+  {
+    "id": "14",
+    "question": "Define or explain: Micro-program",
+    "solution": "A sequence of micro-instructions that implements one or more ISA-level instructions.",
+    "category": "Defintions"
+  },
+  {
+    "id": "15",
+    "question": "Define or explain: CISC and RISC",
+    "solution": "CISC uses larger, more complex instruction sets, while RISC uses simpler instructions designed for efficient implementation and pipelining.",
+    "category": "Defintions"
+  },
+  {
+    "id": "16",
+    "question": "Define or explain: Speculative execution",
+    "solution": "Executing instructions before it is certain they are needed, usually after predicting a branch, to improve performance if the prediction is correct.",
+    "category": "Defintions"
+  },
+  {
+    "id": "17",
+    "question": "Define or explain: Bus, and their properties (serial/parallel, synchronous/asynchrnous)",
+    "solution": "A bus is a shared communication link for data, addresses, or control signals; it may transmit bits serially or in parallel and may be clocked synchronously or coordinated asynchronously.",
+    "category": "Defintions"
+  },
+  {
+    "id": "18",
+    "question": "Define or explain: Arithmetic logic unit (ALU)",
+    "solution": "The datapath component that performs arithmetic and logical operations such as addition, subtraction, AND, OR, and shifts.",
+    "category": "Defintions"
+  },
+  {
+    "id": "19",
+    "question": "Define or explain: Ripple-carry full adder",
+    "solution": "An adder built from full-adder stages where each carry-out feeds the next stage, making the carry propagate from low to high bits.",
+    "category": "Defintions"
+  },
+  {
+    "id": "20",
+    "question": "Define or explain: Adder-subtractor",
+    "solution": "A circuit that can add or subtract, commonly by conditionally inverting one input and setting the carry-in to perform two's complement subtraction.",
+    "category": "Defintions"
+  },
+  {
+    "id": "21",
+    "question": "Define or explain: Two’s complement overflow",
+    "solution": "Overflow that occurs when adding same-sign two's complement operands produces a result with the opposite sign.",
+    "category": "Defintions"
+  },
+  {
+    "id": "22",
+    "question": "Define or explain: Status registers",
+    "solution": "Registers that hold condition flags or processor state, such as zero, carry, negative, overflow, interrupt enable, or privilege bits.",
+    "category": "Defintions"
+  },
+  {
+    "id": "23",
+    "question": "Define or explain: Special purpose registers",
+    "solution": "Registers with dedicated architectural roles, such as the program counter, stack pointer, status register, or link register.",
+    "category": "Defintions"
+  },
+  {
+    "id": "24",
+    "question": "Define or explain: General purpose registers",
+    "solution": "Registers intended for ordinary program data and address calculations rather than a single fixed architectural role.",
+    "category": "Defintions"
+  },
+  {
+    "id": "25",
+    "question": "Define or explain: Wallace Tree",
+    "solution": "A multiplier reduction structure that uses layers of adders to combine partial products quickly before a final addition.",
+    "category": "Defintions"
+  },
+  {
+    "id": "26",
+    "question": "Define or explain: Same Instruction, Multiple Data (SIMD)",
+    "solution": "A form of parallelism where one instruction applies the same operation to multiple data elements in a vector.",
+    "category": "Defintions"
+  },
+  {
+    "id": "27",
+    "question": "Define or explain: Execution cycle",
+    "solution": "The repeated sequence of steps a processor uses to execute instructions, typically including fetch, decode, execute, and writeback.",
+    "category": "Defintions"
+  },
+  {
+    "id": "28",
+    "question": "Define or explain: Fetch/Decode/Execute/Writeback",
+    "solution": "Common instruction stages: fetch gets the instruction, decode interprets it, execute performs the operation, and writeback stores the result.",
+    "category": "Defintions"
+  },
+  {
+    "id": "29",
+    "question": "Define or explain: Instruction Pipelining",
+    "solution": "Overlapping the stages of multiple instructions so different instructions are processed at the same time in different pipeline stages.",
+    "category": "Defintions"
+  },
+  {
+    "id": "30",
+    "question": "Define or explain: Bubbles",
+    "solution": "Empty pipeline slots inserted when progress must pause, often because of hazards or stalls.",
+    "category": "Defintions"
+  },
+  {
+    "id": "31",
+    "question": "Define or explain: Cycles per Instruction (CPI)",
+    "solution": "The average number of clock cycles required to complete one instruction.",
+    "category": "Defintions"
+  },
+  {
+    "id": "32",
+    "question": "Define or explain: Iron Law of processor performance",
+    "solution": "Program time is determined by instruction count, cycles per instruction, and clock cycle time.",
+    "category": "Defintions"
+  },
+  {
+    "id": "33",
+    "question": "Define or explain: Hazards (data, structural, and control)",
+    "solution": "Pipeline problems that prevent the next instruction from executing normally: data hazards involve dependencies, structural hazards involve hardware conflicts, and control hazards involve branches or control flow.",
+    "category": "Defintions"
+  },
+  {
+    "id": "34",
+    "question": "Define or explain: Data dependencies (RAW, WAR, and WAW)",
+    "solution": "Relationships between instructions using the same data: RAW reads after a write, WAR writes after a read, and WAW writes after a write.",
+    "category": "Defintions"
+  },
+  {
+    "id": "35",
+    "question": "Define or explain: Memory hierarchy",
+    "solution": "The layered organization of storage, from small fast registers and caches through main memory to larger slower storage.",
+    "category": "Defintions"
+  },
+  {
+    "id": "36",
+    "question": "Define or explain: von Neumann architecture",
+    "solution": "A computer organization where instructions and data share the same memory system and are processed by a CPU.",
+    "category": "Defintions"
+  },
+  {
+    "id": "37",
+    "question": "Define or explain: Cache inclusivity",
+    "solution": "A property describing whether data in one cache level is guaranteed to also exist in another level, such as inclusive, exclusive, or non-inclusive caches.",
+    "category": "Defintions"
+  },
+  {
+    "id": "38",
+    "question": "Define or explain: Caches (instruction and data)",
+    "solution": "Small fast memories that keep recently or frequently used instructions and data close to the processor.",
+    "category": "Defintions"
+  },
+  {
+    "id": "39",
+    "question": "Define or explain: Working set",
+    "solution": "The set of memory locations a program actively uses over a period of time.",
+    "category": "Defintions"
+  },
+  {
+    "id": "40",
+    "question": "Define or explain: Cache line",
+    "solution": "The fixed-size block of memory transferred between main memory and a cache.",
+    "category": "Defintions"
+  },
+  {
+    "id": "41",
+    "question": "Define or explain: Cache hits and misses",
+    "solution": "A hit occurs when requested data is found in the cache; a miss occurs when it is absent and must be fetched from a lower level.",
+    "category": "Defintions"
+  },
+  {
+    "id": "42",
+    "question": "Define or explain: Locality (temporal and spatial)",
+    "solution": "Temporal locality means recently used data is likely to be reused; spatial locality means nearby addresses are likely to be used soon.",
+    "category": "Defintions"
+  },
+  {
+    "id": "43",
+    "question": "Define or explain: Direct mapped cache",
+    "solution": "A cache where each memory block can be stored in exactly one cache line determined by its address.",
+    "category": "Defintions"
+  },
+  {
+    "id": "44",
+    "question": "Define or explain: Cache eviction",
+    "solution": "Removing a cache line to make room for another block of memory.",
+    "category": "Defintions"
+  },
+  {
+    "id": "45",
+    "question": "Define or explain: Tag Store",
+    "solution": "The part of a cache that stores address tags and metadata used to determine whether a cache line contains the requested block.",
+    "category": "Defintions"
+  },
+  {
+    "id": "46",
+    "question": "Define or explain: Valid bit",
+    "solution": "A cache metadata bit indicating whether a cache line contains meaningful current data.",
+    "category": "Defintions"
+  },
+  {
+    "id": "47",
+    "question": "Define or explain: Stack",
+    "solution": "A last-in, first-out memory region commonly used for function calls, local variables, saved registers, and return addresses.",
+    "category": "Defintions"
+  },
+  {
+    "id": "48",
+    "question": "Define or explain: Stack pointer",
+    "solution": "A register that holds the address of the current top of the stack.",
+    "category": "Defintions"
+  },
+  {
+    "id": "49",
+    "question": "Define or explain: Application binary interface and the mechanim for subroutine calls",
+    "solution": "An ABI defines low-level calling conventions such as argument passing, return values, register usage, stack layout, and how subroutines call and return.",
+    "category": "Defintions"
+  },
+  {
+    "id": "50",
+    "question": "Define or explain: Stack overflow",
+    "solution": "A failure that occurs when the stack grows beyond its allocated memory region.",
+    "category": "Defintions"
+  },
+  {
+    "id": "51",
+    "question": "Define or explain: Buffer overflow",
+    "solution": "A bug where writes exceed the bounds of a buffer and overwrite adjacent memory.",
+    "category": "Defintions"
+  },
+  {
+    "id": "52",
+    "question": "Define or explain: Return address",
+    "solution": "The instruction address saved during a call so execution can resume after the subroutine returns.",
+    "category": "Defintions"
+  },
+  {
+    "id": "53",
+    "question": "Define or explain: Stack frame",
+    "solution": "The portion of the stack used by one function call, typically containing saved state, local variables, arguments, and a return address.",
+    "category": "Defintions"
+  },
+  {
+    "id": "54",
+    "question": "Define or explain: Interrupt",
+    "solution": "An event that causes the processor to suspend normal execution and run an interrupt handler.",
+    "category": "Defintions"
+  },
+  {
+    "id": "55",
+    "question": "Define or explain: Exception",
+    "solution": "A synchronous event caused by the currently executing instruction, such as divide-by-zero, invalid instruction, or page fault.",
+    "category": "Defintions"
+  },
+  {
+    "id": "56",
+    "question": "Define or explain: Interrupt handler",
+    "solution": "A routine executed in response to an interrupt to service the event and then return control.",
+    "category": "Defintions"
+  },
+  {
+    "id": "57",
+    "question": "Define or explain: Interrupt vector",
+    "solution": "A table or address mechanism used to find the correct handler for an interrupt or exception.",
+    "category": "Defintions"
+  },
+  {
+    "id": "58",
+    "question": "Define or explain: Program counter",
+    "solution": "A register holding the address of the next instruction to fetch or execute.",
+    "category": "Defintions"
+  },
+  {
+    "id": "59",
+    "question": "Define or explain: System calls",
+    "solution": "Controlled requests from user programs to the operating system for privileged services.",
+    "category": "Defintions"
+  },
+  {
+    "id": "60",
+    "question": "Define or explain: Software interrupts",
+    "solution": "Instructions or traps deliberately executed by software to transfer control to an operating system handler.",
+    "category": "Defintions"
+  },
+  {
+    "id": "61",
+    "question": "Define or explain: Timing interrupt",
+    "solution": "A periodic or scheduled timer interrupt used by the operating system for tasks such as preemptive scheduling.",
+    "category": "Defintions"
+  },
+  {
+    "id": "62",
+    "question": "Define or explain: Protection",
+    "solution": "Hardware and operating-system mechanisms that isolate programs and restrict access to privileged resources.",
+    "category": "Defintions"
+  },
+  {
+    "id": "63",
+    "question": "Define or explain: Privileged execution",
+    "solution": "A processor mode that permits protected operations such as configuring memory management, handling interrupts, or accessing devices.",
+    "category": "Defintions"
+  },
+  {
+    "id": "64",
+    "question": "Define or explain: Position independent code",
+    "solution": "Code that can run correctly regardless of the memory address where it is loaded.",
+    "category": "Defintions"
+  },
+  {
+    "id": "65",
+    "question": "Define or explain: Virtual memory",
+    "solution": "A memory abstraction that gives programs virtual address spaces mapped to physical memory by hardware and the operating system.",
+    "category": "Defintions"
+  },
+  {
+    "id": "66",
+    "question": "Define or explain: Pages",
+    "solution": "Fixed-size blocks of virtual memory used as the unit of address translation and protection.",
+    "category": "Defintions"
+  },
+  {
+    "id": "67",
+    "question": "Define or explain: Virtual addresses",
+    "solution": "Addresses generated by a program before translation by the memory management unit.",
+    "category": "Defintions"
+  },
+  {
+    "id": "68",
+    "question": "Define or explain: Physical addresses",
+    "solution": "Addresses that refer to actual locations in main memory after address translation.",
+    "category": "Defintions"
+  },
+  {
+    "id": "69",
+    "question": "Define or explain: Page table",
+    "solution": "A data structure mapping virtual pages to physical frames and storing permissions or status bits.",
+    "category": "Defintions"
+  },
+  {
+    "id": "70",
+    "question": "Define or explain: Page faults",
+    "solution": "Exceptions raised when a virtual page translation is missing, invalid, or violates permissions.",
+    "category": "Defintions"
+  },
+  {
+    "id": "71",
+    "question": "Define or explain: Translation Lookaside Buffer (TLB)",
+    "solution": "A small cache of recent virtual-to-physical address translations.",
+    "category": "Defintions"
+  },
+  {
+    "id": "72",
+    "question": "The Hex 8 ISA has 8-bit instructions consisting of a 4-bit opcode and a 4-bit operand.\nThe PFIX (prefix) instruction allows the following:\nA. System calls.\nB. Memory protection.\nC. 8-bit operands.\nD. 8-bit opcodes.\nE. The processor to halt execution.",
+    "solution": "The PFIX instruction comes from the Transputer. It combines its 4-bit operand with the 4-bit operand of the following instruction. The PFIX operand is used as the most-significant bits of the 8-bit operand of the following instruction.",
+    "category": "Architecture and Micro-architecture"
+  },
+  {
+    "id": "73",
+    "question": "The Hex 8 ISA has 8-bit instructions consisting of a 4-bit opcode and a 4-bit operand.\nThe PFIX (prefix) instruction allows operands to be extended to 8-bits, at the cost of executing this extra instruction.\nWhich of the following changes would allow for 8-bit operands, without the need for an extra instruction or increasing the latency of the instructions?\nA. Extend the instruction length to 12 or more bits.\nB. Store operands in memory.\nC. Store operands in a register.\nD. Use an assembler to extend the operands by 4 bits.\nE. Append a fixed 4-bit number to the operands.",
+    "solution": "The PFIX instruction comes from the Transputer. It combines its 4-bit operand with the 4-bit operand of the following instruction.\nThe question asks what other solution could extend the operands, without increasing the number of instructions or adding latency. The only viable solution of those given is to extend the length of the instruction.\nThe other answers would either not work (appending a fixed 4-bit number or use a “magic” assembler), or increase latency and/or require additional instructions to support 8-bit operands (storing in registers/memory).",
+    "category": "Architecture and Micro-architecture"
+  },
+  {
+    "id": "74",
+    "question": "The Hex 8 ISA has a word length of 8 bits. Each instruction is formed of a 4-bit opcode and a 4-bit operand, which limits the number of instructions to 16.\nSome of the instructions in the Hex 8 ISA do not require operands. Which of the following schemes would allow the ISA to be expanded to contain 31 instructions, while retaining 4-bit opcodes which can be decoded in a single cycle?\nA. Include an instruction to specify the operand is to be interpreted as an opcode of an instruction which doesn’t require an operand. E.g. EXE ADD\nB. Send an interrupt to indicate the instruction opcode is larger than 16. E.g. A 4-bit opcode refers to two instructions depending on an interrupt signal\nC. Use a mechanism similar to the PFIX instruction to construct the opcode from two instructions\nD. Write a micro-program to implement the additional instructions",
+    "solution": "The only way to get 31 instructions of the solutions listed is to use one instruction of the original 16 to designate the operand is the opcode. This yields 15 + 16 = 31 instructions.\nThe other methods yield 32 and are impractical, require two cycles or are incorrect (respectively).",
+    "category": "Architecture and Micro-architecture"
+  },
+  {
+    "id": "75",
+    "question": "Many Instruction Set Architectures, including x86 and Arm, provide extensions to support SIMD vector instructions. These instructions perform the same operation on each element of the vector.\nTwo input programs are written, both performing the same total number of computations (arithmetic operations). One uses SIMD vector instructions and the other does not.\nWhich of these statements is true?\nA. The program which uses vector instructions results in fewer instructions to be fetched and decoded.\nB. The program which uses vector instructions results in more instructions to be fetched and decoded.\nC. The program which uses vector instructions results in more computations to be performed by the processor.\nD. The program which uses vector instructions results in fewer computations to be performed by the processor.\nE. The program which uses vector instructions results will always take longer to execute.",
+    "solution": "The vector program will contain fewer instructions, and so fewer instructions will be fetched/decoded for a fixed amount of arithmetic.\nThe question contains no detail about the speed of execution or the implementation of the SIMD instructions in the micro-architecture. Therefore the answer regarding speed of execution is not always true.",
+    "category": "Architecture and Micro-architecture"
+  },
+  {
+    "id": "76",
+    "question": "When a micro-architecture is designed, which of the following factors might be considered when implementing a particular architecture?\nA. Thermal design power (the maximum heat generated by the processor).\nB. The speed of the clock.\nC. Production yield.\nD. All of the above.\nE. None of the above.",
+    "solution": "All of the three listed factors are important when implementing an archi- tecture, along with many others.",
+    "category": "Architecture and Micro-architecture"
+  },
+  {
+    "id": "77",
+    "question": "A processor uses a micro-programmed control unit. There are many advantages to this approach over a hardwired control unit. Which one of these statements correctly describes such an advantage?\nA. It can support more instructions than a hardwired control unit\nB. It allows a more complex instruction set to be implemented more conveniently\nC. General programs can change the micro-code so users can change the processor function\nD. Micro-programs are the only way to implement a control unit",
+    "solution": "Application of knowledge from the lectures.\nMicro-programs are hidden from the ISA so cannot be changed by the users. Hard- wired control is an alternative implementation of the control unit which can implement lots of complex instructions; although in practice it wouldn’t be done it is still possible.\nThe correct answer is therefore that micro-programmed control a matter of conve- nience.",
+    "category": "Architecture and Micro-architecture"
+  },
+  {
+    "id": "78",
+    "question": "A Control Unit in the micro-architectural design of a processor is used to control the Data Path so that it performs whatever is required for the current instruction. Some processor designs implement this unit manually, but others use micro-programs instead, especially when there are a large number of instructions. When an instruction is decoded, what must the Decoder do in a micro-programmed control processor?\nA. Fetch the next instruction from memory.\nB. Set the architectural program counter according to the decoded opcode.\nC. Set the micro-program counter to the start of the corresponding micro-program for the decoded opcode.\nD. Send a 1-bit signal on the control bus to the Control Unit corresponding to the decoded opcode.\nE. Put the opcode on the data bus.",
+    "solution": "The decoder will set the micro-program counter to the address of the micro-program for that particular opcode.\nThe main program counter won’t be set as a result of the decoder (ever) – branch instructions may do this, but not directly by the decoder.\nA 1-bit signal on the control bus will be insufficient for an ISA with more than 2 instructions. The question highlighted the case where there are a large number of instructions. Selecting this answer would suggest a hardwired control unit, but the question says the processor is controlled by a micro-program.\nThe other options are spurious.",
+    "category": "Architecture and Micro-architecture"
+  },
+  {
+    "id": "79",
+    "question": "An Instruction Set Architecture (ISA), such as Arm or x86, gives lots of information about what a processor should do. Which of the following does an ISA not define?\nA. The number of architectural registers.\nB. The latency of each instruction.\nC. The instruction format.\nD. The memory addressing modes.\nE. Binary representation of the opcodes.",
+    "solution": "The ISA defines all things listed except the latency of each instruction, which is a micro-architectural feature.\nIt might be possible to implement an ISA with a different binary representation of each opcode, however this would result in binary incompatibility of programs conforming to the ISA, and this is not done in practice.",
+    "category": "Architecture and Micro-architecture"
+  },
+  {
+    "id": "80",
+    "question": "A processor designer has correctly implemented an ISA, and used a micro-programmed control unit. They have only provided one program counter register for use by the stored program and the control micro-program. What is the problem with this?\nA. The micro-program will overwrite memory.\nB. Program instructions may be skipped.\nC. The implementation is inefficient as the program counter must be saved to memory so that it can be used to execute the micro-program for each instruction.\nD. The micro-program is incorrect.\nE. The program must be written in micro-instructions.",
+    "solution": "The micro-programmed control unit typically has its own micro-program counter so that it can execute the micro-program. With a shared register, the (main) program counter needs to be backed up each cycles, which is inefficient. Without doing this, program instructions could be skipped, however the question assumes the implementation is correct. Writing programs directly in micro-instructions would resolve the issue of a lack of a separate program counter, however would no longer be valid on the processor as it implements the ISA, not the micro-program.",
+    "category": "Architecture and Micro-architecture"
+  },
+  {
+    "id": "81",
+    "question": "A program has the following mix of instructions:\n```text\nInstruction  Cycles  Frequency\nLoad         8       30%\nStore        9       15%\nBranch       11      25%\nArithmetic   3       30%\n```\nWhat is the average number of clock cycles per instruction (CPI) for this program?\nA. 1.00\nB. 7.40\nC. 7.75\nD. 23.87\nE. 740.00",
+    "solution": "The CPI is computed as the weighted average of the instruction cycles where the weights are the frequencies.\nCP I = 8 × 30 + 9 × 15 + 11 × 25 + 3 × 30 100 = 7.40",
+    "category": "Architecture and Micro-architecture"
+  },
+  {
+    "id": "82",
+    "question": "A program has the following mix of instructions:\n```text\nInstruction  Cycles  Frequency\nLoad         4       20%\nStore        4       15%\nBranch       8       5%\nArithmetic   1       60%\n```\nWhat is the average number of clock cycles per instruction (CPI) for this program?\nA. 2.40\nB. 14.12\nC. 2.08\nD. 43.53\nE. 0.17",
+    "solution": "The CPI is computed as the weighted average of the instruction cycles where the weights are the frequencies.\nCP I = 4 × 20 + 4 × 15 + 8 × 5 + 1 × 60 100 = 2.4",
+    "category": "Architecture and Micro-architecture"
+  },
+  {
+    "id": "83",
+    "question": "A breakdown of the instructions in a program is given in the following table. The table gives the number of cycles taken by each instruction.\n```text\nInstruction  Cycles  Count\nLoad         4       20\nStore        4       15\nBranch       8       5\nArithmetic   1       58\n```\nConsider a scalar (non-pipelined) processor which has no data caches, clocked at 1000 cycles per second (1 KHz). How long does the program in the above table take to run on this processor?\nA. 0.238 seconds.\nB. 2.380 seconds.\nC. 2.429 seconds.\nD. 0.243 seconds.\nE. 1.666 seconds.",
+    "solution": "As a scalar processor, the instructions will be executed sequentially, taking their full time with no overlap (which would be the case for pipelining). Therefore the total number of cycles is the sum of the products of instruction counts and their latencies.\nThe program takes 4 × 20 + 4 × 15 + 8 × 5 + 1 × 58 = 238 cycles.\nThe processor is 1 KHz, processing 1000 cycles per second, so the time taken for execute the program is 238/1000 = 0 .238 seconds.\nA common mistake might be to attempt to compute the CPI, as the weighted average of the data in the table. The instruction counts deliberately do not sum to 100 to try to hint this is the wrong approach. The second answer is the weighted average, and the third is the CPI calculated correctly however both are the wrong answer for the question.",
+    "category": "Architecture and Micro-architecture"
+  },
+  {
+    "id": "84",
+    "question": "A scalar pipelined processor has a 4-stage execution cycle: Fetch – Decode – Execute – Write. What is the theoretical maximum throughput (the number of completed instruc- tions per cycle) of the processor?\nA. 4 instructions per cycle.\nB. 1 instruction per cycle.\nC. It depends on the number of bubbles/stalls.\nD. It depends on the instruction latency.\nE. It depends on the clock speed.",
+    "solution": "This is a tricky question, although just requires synthesis of knowledge from the lectures. The lecture slides do show this as an example, although it is a complicated idea, and required deep understanding to reconstruct in this closed-book exam.\nA scalar pipelined processor can at retire at most one instruction each cycle.\nThe 4-stage execution cycle means at most 4 instructions are in flight (one in each stage), but the question asks for throughput as defined in completed instructions per cycle.\nInstructions with long latency will cause bubbles in the pipeline, and therefore more cycles per instruction will be required. This CPI metric is shown in lectures but is the inverse of the question here, which asks for a maximum number of instructions per cycle, all other things being equal.",
+    "category": "Architecture and Micro-architecture"
+  },
+  {
+    "id": "85",
+    "question": "What type of data dependency hazard occurs in following instruction stream?\n```text\nr1 <- r2 + r3\nr4 <- r3 + r4\nr5 <- r3 + r1\n```\nA. Read after Write (RAW)\nB. Read after Read (RAR)\nC. Write after Write (WAW)\nD. Write after Read (WAR)",
+    "solution": "The register r1 is read on line 3 after being written on line 1, therefore the answer is Read after Write (RAW).\nLine 2 is not a hazard because although r2 is read and written, it is within the same instruction and therefore does not impose a data dependence.",
+    "category": "Architecture and Micro-architecture"
+  },
+  {
+    "id": "86",
+    "question": "What type of data dependency hazard occurs in following instruction stream?\n```text\nr0 <- r2 + r3\nr1 <- r3 + r4\nr5 <- r3 + r1\n```\nA. Read after Write (RAW)\nB. Read after Read (RAR)\nC. Write after Read (WAR)\nD. Write after Write (WAW)",
+    "solution": "The register r1 is read on line 3 after being written on line 1 and 2, therefore the answer is Read after Write (RAW).",
+    "category": "Architecture and Micro-architecture"
+  },
+  {
+    "id": "87",
+    "question": "What type of hazard is likely to occur in following instruction stream when it is executed on a pipelined processor with three arithmetic logic units (ALUs)?\n```text\nr1 <- r2 + r3\nr4 <- r5 + r4\nr1 <- r2 + r6\nr7 <- r3 + r5\n```\nA. Read after Read (RAR) data hazard.\nB. Write after Read (WAR) data hazard.\nC. Read after Write (RAW) data hazard.\nD. Write after Write (WAW) data hazard.\nE. Control hazard.",
+    "solution": "The register r1 is written on lines 1 and 3, therefore there is could be a Write after Write (WAW) data hazard.\nLine 2 is not a hazard because although r4 is read and written, it is within the same instruction and therefore does not impose a data dependence.\nThere are no branch instructions so no opportunities for a control hazard. Read after Read (RAR) is made up.",
+    "category": "Architecture and Micro-architecture"
+  },
+  {
+    "id": "88",
+    "question": "Figure 1 shows a circuit for 5-bit multiplication, which is constructed with half adders (HA) and full adders (FA). Why is this circuit not a Wallace Tree?\nA. It computes the addition of two numbers instead.\nB. The layers use half adders when they should use full adders.\nC. Wallace Trees only ever have three layers.\nD. The layers use full adders when they should use half adders.\nE. The layers do not follow the Wallace Tree procedure of combining 2 or more wires with the appropriate adder.",
+    "solution": "Figure 1 is a shift-adder circuit for multiplication, so is not a Wallace Tree.\nSpecifically, it doesn’t follow the procedure for adding layers.",
+    "category": "ALU"
+  },
+  {
+    "id": "89",
+    "question": "A ripple-carry full adder can be turned into an adder-subtractor by converting one of the inputs to two’s complement. The control signal is sent to the first carry-in bit of the first 1-bit full-adder. Which logic gate can be used to combine each bit of one of the inputs with the control signal to complete the conversion in order to compute subtraction?\nA. AND gate.\nB. OR gate.\nC. XOR gate.\nD. NOT gate.\nE. NAND gate.\nQuestion 20 and Question 21 both refer to the the two’s complement addition of the 8-bit numbers 00011100 (28 in decimal) and 01100011 (99 in decimal).",
+    "solution": "One input needs to inverted with a logical NOT operation only if the control signal is active.\nIf a NOT gate is used, a multiplexor needs to select between the two versions; the question asks for the input to be combined with the control signal, and so a NOT gate alone doesn’t combine the signals.\nAND, OR and NAND gates have the incorrect logic tables for the required inversion of the input bit based on the control bit.\nThe XOR gate provides the correct inversion.\nQuestion 20 and Question 21 both refer to the the two’s complement addition of the 8-bit numbers 00011100 (28 in decimal) and 01100011 (99 in decimal).",
+    "category": "ALU"
+  },
+  {
+    "id": "90",
+    "question": "Compute the two's complement addition of the two 8-bit numbers.\n```text\n00011100  (28 in decimal)\n01100011  (99 in decimal)\n```\nA. 01000111 (71 in decimal)\nB. 10111001 (-71 in decimal)\nC. 10000001 (-127 in decimal)\nD. 01111111 (127 in decimal)",
+    "solution": "```text\n  00011100  (28 in decimal)\n+ 01100011  (99 in decimal)\n----------\n  01111111  result\n  00000000  carry out\n```",
+    "category": "ALU"
+  },
+  {
+    "id": "91",
+    "question": "## Easter Egg - Matrix Chain Parenthesization\n\nYou are given four matrices with the following dimensions:\n\n- $A_1$: $10 \\times 30$\n- $A_2$: $30 \\times 5$\n- $A_3$: $5 \\times 60$\n- $A_4$: $60 \\times 2$\n\nUse **dynamic programming** to determine:\n\n1. The minimum number of scalar multiplications needed to compute:\n\n$$\nA_1A_2A_3A_4\n$$\n\n2. The optimal parenthesization.\n\nShow all intermediate DP table calculations.",
+    "solution": "## Step 1: Dimensions Array\n\nThe dimensions array is:\n\n$$\np = [10, 30, 5, 60, 2]\n$$\n\nwhere:\n\n- $A_1 = 10 \\times 30$\n- $A_2 = 30 \\times 5$\n- $A_3 = 5 \\times 60$\n- $A_4 = 60 \\times 2$\n\n---\n\n## Step 2: DP Definition\n\nLet:\n\n$$\nm[i,j]\n$$\n\nrepresent the minimum cost of multiplying matrices:\n\n$$\nA_i \\cdots A_j\n$$\n\nBase case:\n\n$$\nm[i,i] = 0\n$$\n\nsince a single matrix requires no multiplication.\n\n---\n\n## Step 3: Length-2 Chains\n\n### Compute $m[1,2]$\n\n$$\n10 \\cdot 30 \\cdot 5 = 1500\n$$\n\nTherefore:\n\n$$\nm[1,2] = 1500\n$$\n\n---\n\n### Compute $m[2,3]$\n\n$$\n30 \\cdot 5 \\cdot 60 = 9000\n$$\n\nTherefore:\n\n$$\nm[2,3] = 9000\n$$\n\n---\n\n### Compute $m[3,4]$\n\n$$\n5 \\cdot 60 \\cdot 2 = 600\n$$\n\nTherefore:\n\n$$\nm[3,4] = 600\n$$\n\n---\n\n## Step 4: Length-3 Chains\n\n### Compute $m[1,3]$\n\nSplit at $k = 1$:\n\n$$\n0 + 9000 + (10 \\cdot 30 \\cdot 60) = 27000\n$$\n\nSplit at $k = 2$:\n\n$$\n1500 + 0 + (10 \\cdot 5 \\cdot 60) = 4500\n$$\n\nMinimum:\n\n$$\nm[1,3] = 4500\n$$\n\nOptimal split at:\n\n$$\nk = 2\n$$\n\n---\n\n### Compute $m[2,4]$\n\nSplit at $k = 2$:\n\n$$\n0 + 600 + (30 \\cdot 5 \\cdot 2) = 900\n$$\n\nSplit at $k = 3$:\n\n$$\n9000 + 0 + (30 \\cdot 60 \\cdot 2) = 12600\n$$\n\nMinimum:\n\n$$\nm[2,4] = 900\n$$\n\nOptimal split at:\n\n$$\nk = 2\n$$\n\n---\n\n## Step 5: Length-4 Chain\n\n### Compute $m[1,4]$\n\nSplit at $k = 1$:\n\n$$\n0 + 900 + (10 \\cdot 30 \\cdot 2) = 1500\n$$\n\nSplit at $k = 2$:\n\n$$\n1500 + 600 + (10 \\cdot 5 \\cdot 2) = 2200\n$$\n\nSplit at $k = 3$:\n\n$$\n4500 + 0 + (10 \\cdot 60 \\cdot 2) = 5700\n$$\n\nMinimum:\n\n$$\nm[1,4] = 1500\n$$\n\nOptimal split at:\n\n$$\nk = 1\n$$\n\n---\n\n## Final Answer\n\n### Minimum Number of Scalar Multiplications\n\n$$\n1500\n$$\n\n---\n\n### Optimal Parenthesization\n\n$$\nA_1(A_2(A_3A_4))\n$$\n\nOrder of computation:\n\n1. Compute $(A_3A_4)$\n2. Multiply the result with $A_2$\n3. Multiply the result with $A_1$\n\n---\n\n## Complexity\n\nTime complexity:\n\n$$\n\\Theta(n^3)\n$$\n\nSpace complexity:\n\n$$\n\\Theta(n^2)\n$$\n",
+    "category": "ALU"
+  },
+  {
+    "id": "92",
+    "question": "Compute the two's complement addition of the following two 8-bit numbers:\n```text\n01100100\n10111000\n```\nThe result is:\nA. 10101100 (-84 in decimal).\nB. 11011100 (-36 in decimal).\nC. 00011100 (28 in decimal).\nD. 11100100 (-28 in decimal).\nE. 11111100 (-4 in decimal).",
+    "solution": "This question asks to sum 100 and -72.\n```text\n  01100100\n+ 10111000\n----------\n  00011100  result\n  11100000  carry out\n```",
+    "category": "ALU"
+  },
+  {
+    "id": "93",
+    "question": "Compute the two's complement addition of the following two 8-bit numbers:\n```text\n11011101\n00100101\n```\nThe result is:\nA. 11111000 (-8 in decimal).\nB. 11111111 (-1 in decimal).\nC. 00000010 (2 in decimal).\nD. 00000101 (5 in decimal).\nE. 01001000 (72 in decimal).",
+    "solution": "This question asks to sum -35 and 37.\n```text\n  11011101\n+ 00100101\n----------\n  00000010  result\n  11111101  carry out\n```",
+    "category": "ALU"
+  },
+  {
+    "id": "94",
+    "question": "Did the result overflow?\nA. Yes.\nB. No.",
+    "solution": "The question uses two’s complement arithmetic, so the final two carry bits need checking. The final two carry bits are the same (1), therefore overflow has not occurred.",
+    "category": "ALU"
+  },
+  {
+    "id": "95",
+    "question": "Compute the two's complement addition of the following two 8-bit numbers:\n```text\n01100011\n11001000\n```\nDoes the result cause an overflow, and why?\nA. Yes, there was an overflow because the final carry bit is one.\nB. Yes, there was an overflow because the final two carry bits are different.\nC. No, there was not an overflow because the final two carry bits are different.\nD. Yes, there was an overflow because the final two carry bits are the same.\nE. No, there was not an overflow because the final two carry bits are the same.",
+    "solution": "This question asks to sum 99 and -56, to equal 43.\n```text\n  01100011\n+ 11001000\n----------\n  00101011  result\n  11000000  carry out\n```\nThere is not overflow because the final two carry out bits match. Note the carry out on the final (left-most) binary addition is 1 because the carry is carried.",
+    "category": "ALU"
+  },
+  {
+    "id": "96",
+    "question": "Compute the two's complement addition of the following two 8-bit numbers:\n```text\n11101011\n11011010\n```\nDoes the result cause an overflow, and why?\nA. No, there was not an overflow because the final two carry bits are different.\nB. No, there was not an overflow because the final two carry bits are the same.\nC. Yes, there was an overflow because the final two carry bits are different.\nD. Yes, there was an overflow because the final two carry bits are the same.\nE. Yes, there was an overflow because the final carry bit is one.",
+    "solution": "This question asks to sum -21 and -38, to equal -59.\n```text\n  11101011\n+ 11011010\n----------\n  11000101  result\n  11111010  carry out\n```\nThere is not overflow because the final two carry out bits match.",
+    "category": "ALU"
+  },
+  {
+    "id": "97",
+    "question": "Explain the key features of the following memory technologies. You should discuss the performance, volatility, and capacity.\n1. SRAM\n2. DRAM\n3. HBM\n4. Flash\n5. Hard disk\n6. Tape",
+    "solution": "SRAM Volatile memory made of flip-flops. Made just of logical components, it is the fastest type of memory, and as such tends to have limited capacity in part because it is not that dense in terms of the physical size of each component. It is mainly used for caches.\nDRAM Volatile memory used as the main memory in processors. Constructed using logic and capacitors, with the capacitor being used to store charge, representing a binary value. It needs regular refresh to ensure that the data values are maintained in the capacitors.\nHBM High-bandwidth memory. A 3D stacked memory technology used to provide high bandwidth main memory. It has higher bandwidth than DRAM, and slightly higher latency. It is volatile.\nFlash High capcity, non-volatile stoage. Often used as the main persistent data store in commodity hardware, or for fast storage in large-scale data centres. Flash is relatively fast to access compared to the other non-volatile storage technologies such as HDD and tape.\nHard disk High capacity, non-volatile storage. Often used for bulk storage in desktop and workstation machines, although flash is often used in more portable devices.\nTape Very high capacity, non-volatile storage, often used for archival purposes. Very slow to access random data due to linear nature of the tape.",
+    "category": "Memory"
+  },
+  {
+    "id": "98",
+    "question": "Which type of locality does the loop in the following C program demonstrate?\n```c\nfloat A[N];\nfloat sum = 0.0;\nfor (int i = 0; i < N; ++i) {\n  sum += A[i] + A[i + 1];\n}\n```\nA. Just temporal locality.\nB. Just spatial locality.\nC. Both temporal and spatial locality.\nD. Neither; there is no locality in this loop.",
+    "solution": "Both spatial locality and temporal locality are observed in the loop. When we access A[i] we also access data in the nearby location A[i+1]. That data is also reused in the following iteration of the loop, resulting in temporal locality.",
+    "category": "Memory"
+  },
+  {
+    "id": "99",
+    "question": "In a given computer system, accesses to main memory by the processor are supported by a 16 KiB ( 16 384 = 2 14 bytes) direct mapped cache. Memory addresses are 16 bits, and each addressable element has a word size of 4 bytes. Cache blocks are of size 64 bytes.\nLocations in the cache are numbered starting at 0.\nConsider the memory address 0101010110101010 (decimal 21 930) where the least- significant bit is on the right-hand side.\nWhich location in cache is data stored at this address placed, and what is the value in the Tag store?\nA. Location 01011010 (decimal 90), Tag store 0101.\nB. Location 10101010 (decimal 170), Tag store 01010101.\nC. Location 1010 (decimal 10), Tag store 01010101.\nD. Location 01011010 (decimal 90), Tag store 1010.\nE. Location 10101010 (decimal 170), Tag store 0101.",
+    "solution": "Cache blocks are of size 26 bytes, but the memory is addressable in words of 4 bytes. Therefore, there are 26/22 = 2 4 words per cache line; hence the lowest 4 bits of the memory address are used to index within a cache line. Note, the lowest 4 bits of the memory address are safe to ignore in this question.\nThere are 214/64 = 2 14/26 = 2 8 locations in cache. Therefore, 8 bits of the memory address are used to determine the location. They are the 5th–12th least-significant bits, inclusive.\nFinally, the remaining 4 most-significant bits are stored in the Tag.",
+    "category": "Memory"
+  },
+  {
+    "id": "100",
+    "question": "In a given computer system, accesses to main memory by the processor are supported by a 32 KiB ( 32 768 = 2 15 bytes) direct mapped cache. Memory addresses are 16 bits, and each addressable element has a word size of 4 bytes. Cache blocks are of size 64 bytes.\nLocations in the cache are numbered starting at 0.\nConsider the memory address 1101110001101011 (decimal 56 427) where the least- significant bit is on the right-hand side.\nWhich location in cache is data stored at this address placed, and what is the value in the Tag store?\nA. Location 001101011 (decimal 107), Tag store 1101110.\nB. Location 111000110 (decimal 454), Tag store 110.\nC. Location 1011 (decimal 11), Tag store 11011100.\nD. Location 110001101 (decimal 397), Tag store 011.\nE. Location 110111000 (decimal 440), Tag store 1101011.",
+    "solution": "Cache blocks are of size 26 bytes, but the memory is addressable in words of 4 bytes. Therefore, there are 26/22 = 2 4 words per cache line; hence the lowest 4 bits of the memory address are used to index within a cache line. Note, the lowest 4 bits of the memory address are safe to ignore in this question.\nThere are 215/64 = 2 15/26 = 2 9 locations in cache. Therefore, 9 bits of the memory address are used to determine the location. They are the 5th–13th least-significant bits, inclusive.\nFinally, the remaining 3 most-significant bits are stored in the Tag.",
+    "category": "Memory"
+  },
+  {
+    "id": "101",
+    "question": "In a given computer system, accesses to main memory by the processor are supported by a 16 KiB ( 16 384 = 2 14 bytes) direct mapped cache. Memory addresses are 16 bits, and each addressable element has a word size of 1 byte. Cache blocks are of size 64 bytes.\nLocations in the cache are numbered starting at 0.\nConsider the memory address 1010 0110 1001 1111 where the least-significant bit is on the right-hand side.\nWhich location in cache is data stored at this address placed, and what is the value in the Tag store?\nA. Location 1001 1111 , Tag store 1010 0110 .\nB. Location 1010 0111 , Tag store 11.\nC. Location 10 0110 1001 1111 , Tag store 10.\nD. Location 1001 1010 , Tag store 10.\nE. Location 10 1001 1010 0111 , Tag store 11.",
+    "solution": "Cache blocks are of size 64 = 2 6 bytes, but the memory is addressable in words of 1 bytes. Therefore, there are 26/20 = 2 6 = 64 words per cache line; hence the lowest 6 bits of the memory address are used to index within a cache line. As such, the lowest 6 bits of the memory address are safe to ignore in this question.\nThere are 214/64 = 2 14/26 = 2 8 locations in cache. Therefore, 8 bits of the memory address are used to determine the location. They are the 7th–14th least-significant bits, inclusive.\nFinally, the remaining 2 most-significant bits are stored in the Tag.",
+    "category": "Memory"
+  },
+  {
+    "id": "102",
+    "question": "A processor has a memory hierarchy containing:\n• Main memory.\n• L3 exclusive cache.\n• L2 inclusive cache.\n• L1 cache.\n• Registers.\nA cache line is present in the L1 cache. In which other caches can this cache line be guaranteed to be found?\nA. No other caches; the data is only in the L1 cache.\nB. L2; the data can be found in the L1 and L2 caches.\nC. L2 and L3; the data can be found in all three caches (L1, L2 and L3).\nD. L3; the data can be found in the L1 and L3 caches.\nE. The data is tagged as evicted from the L1 cache.",
+    "solution": "The L2 cache is inclusive of L1, meaning it contains an entire copy of the L1 cache, plus extra cache lines. Therefore, as the data is in L1, it will also be found in L2.\nThe L3 cache is exclusive, meaning it only contains data evicted from L2 cache.\nTherefore, the cache line is not guaranteed to be present there.",
+    "category": "Memory"
+  },
+  {
+    "id": "103",
+    "question": "A computer system supports up to 236 bytes (64 GiB) of byte-addressable virtual memory.\nThere are 230 bytes (1 GiB) of physical memory installed. The memory is split in pages of size 4 KiB ( 212 bytes).\nHow large, in MiB (mebibytes), is the Page Table?\nA. 36 MiB.\nB. 0.75 MiB.\nC. 24 MiB.\nD. 288 MiB.\nE. 3 MiB.\nYou may wish to first calculate the number of entries in the Page Table, and the size of each entry.\nRecall:\n• There are 8 bits per byte.\n• There are 1024 bytes in a KiB.\n• There are 1024 KiB in a MiB.\n• There are 1024 MiB in a GiB.",
+    "solution": "There are 236−12 = 2 24 pages, and so the Page Table needs this many entries.\nWe can store 230−12 = 2 18 pages in physical memory, and so each entry of the Page Table stores 18 bits to identify the physical addresses.\nThe page table is therefore 224 × 18 bits, or (224 × 18)/(8 × 1024 × 1024) = 36 MiB.",
+    "category": "Memory"
+  },
+  {
+    "id": "104",
+    "question": "The Translation Lookaside Buffer (TLB) stores which of the following:\nA. Physical memory addresses.\nB. Virtual memory addresses.\nC. A list of all pages.\nD. A cache of recently accessed data.\nE. Decoded instructions.",
+    "solution": "TLBs are an optimisation for virtual to physical memory address transla- tion. Therefore, the cache stores the physical addresses. The virtual addresses are used as an index/key to the cache.\nNote, the TLB doesn’t enumerate all the pages: that is the job of the Page Table.",
+    "category": "Memory"
+  },
+  {
+    "id": "105",
+    "question": "A particular computer architecture supports up to 230 bytes (1 GiB) of byte-addressable virtual memory. The ISA for this architecture therefore uses 30-bit memory addresses.\nThere are 228 bytes (256 MiB) of physical memory installed. The memory is split in pages of size 1 KiB ( 210 bytes).\nA Translation Lookaside Buffer (TLB) is used to speed up the translation of virtual memory addresses to physical memory addresses.\nHow many bits of the address need to be stored for each entry in the TLB?\nA. 2 bits.\nB. 10 bits.\nC. 18 bits.\nD. 20 bits.\nE. 30 bits.",
+    "solution": "The system can store 228−10 = 2 18 pages in physical memory. Therefore each entry of the Page Table, and therefore the TLB, stores 18 bits to identify the physical addresses.\nThe other answers could be derived by following the incorrect, but related, ideas:\n• There are 230−10 = 2 20 (virtual) pages, so the Page Table needs this many entries.\n• By the above, 20 bits are used as an index to the Page Table, so 30 − 20 = 10 bits are kept (passed through unmodified) in the translated physical address.\nThe other 18 bits come from the translated physical address, stored in the Page Table/TLB.\n• Memory address are 30-bit, but the Page Table and TLB do not store the full virtual address.\n• 2 bits is the result of incorrectly calculating the ratio of addressable virtual memory to physical memory.",
+    "category": "Memory"
+  },
+  {
+    "id": "106",
+    "question": "A computer system supports up to 232 bytes (4 GiB) of byte-addressable virtual memory.\nThere are 227 bytes (128 MiB) of physical memory installed. The memory is split in pages of size 16 KiB ( 214 bytes).\nWhat is the minimum size of the Page Table, in KiB (kibibytes)?\nA. 5 KiB.\nB. 8 KiB.\nC. 18 KiB.\nD. 416 KiB.\nE. 576 KiB.\nYou may wish to first calculate the number of entries in the Page Table, and the size of each entry.\nRecall:\n• There are 8 bits per byte.\n• There are 1024 bytes in a KiB.\n• There are 1024 KiB in a MiB.\n• There are 1024 MiB in a GiB.",
+    "solution": "There are 232−14 = 2 18 pages, and so the Page Table needs this many entries.\nWe can store 227−14 = 2 13 pages in physical memory, and so each entry of the Page Table stores 13 bits to identify the physical addresses of each page.\nThe page table is therefore 218 × 13 bits, or (218 × 13)/(8 × 1024) = 416 KiB.",
+    "category": "Memory"
+  },
+  {
+    "id": "107",
+    "question": "Programs use stacks in memory to support subroutine calls. Typically the stacks are descending, where pushing data onto the stack moves the stack pointer to a lower address.\nWhy is a descending stack more convenient that an ascending stack?\nA. Implementing an addition circuit is easier than a subtraction one\nB. Ascending stacks could run out of memory and descending stacks cannot\nC. Subroutine cannot access calling parameters in the stack frame\nD. The total amount of stack memory required by a program is unknown at compile time, so by starting at high addresses the stack has the maximum amount of room to expand",
+    "solution": "This is application of knowledge of stacks by thinking over the conse- quences of the statements.\nThe students know how to implement an adder-subtractor so the computation of offsets is easy in both cases.\nBoth ascending and descending stacks can run out of memory if they get too large.\nSubroutines can access parameters in both cases.\nThe correct answer is the stack size is unknown in advance, so descending give the largest amount of space safely.",
+    "category": "Hardware-support for Software"
+  },
+  {
+    "id": "108",
+    "question": "A stack data structure is often used to support subroutine calling in a high level language like C.\nWho or what is responsible for allocating enough space on the stack for a subroutine’s local variables?\nA. The programmer.\nB. The compiler.\nC. The loader.\nD. The linker.\nE. The special registers.",
+    "solution": "Tests understanding of the subroutine calling process.\nThe compiler will insert instructions to decrease the stack pointer sufficiently for subroutine’s local variables.\nThe programmer might have to do it by hand when writing assembly, but this question specifies a high level language.",
+    "category": "Hardware-support for Software"
+  },
+  {
+    "id": "109",
+    "question": "Why is it important to support different execution privileges at an architectural level?\nA. To ensure user programs cannot access restricted portions of memory\nB. To ensure kernel cannot access application memory\nC. To allow relocation of programs in memory\nD. To allow the kernel to schedule multiple programs on a single processor",
+    "solution": "The architecture must put in place some restrictions to ensure that load/store instructions to certain memory addresses will only succeed based on the privilege level.\nFor example, a load/store from kernel code should always work, but a load/store in user applications should only succeed if the memory address is within the allowable range, or if they are accessing the page table for virtual-to-physical address translation, etc.",
+    "category": "Hardware-support for Software"
+  },
+  {
+    "id": "110",
+    "question": "In adding protection to the Hex 8 ISA, we must ensure that only the kernel can access all memory addresses. To do this, we add a flag `ink` which is 1 if the processor is executing instructions associated with the kernel. We also add two registers: `ab`, the application base memory address; and `as`, the application size.\n\nThe `LDBI` instruction was originally defined as follows:\n```text\nLDBI  breg <- mem[breg + oreg]\n```\nWhich of the following is the correct definition of a protected `LDBI` Hex 8 instruction?\n```text\nA. if ink is 1 then breg <- mem[breg + oreg]\n   else if (breg + oreg) < as then breg <- mem[ab + breg + oreg]\n   else error\n\nB. if ink is 0 then breg <- mem[breg + oreg]\n   else if (breg + oreg) < as then breg <- mem[ab + breg + oreg]\n   else error\n\nC. if ink is 1 then breg <- mem[breg + oreg]\n   else if (breg + oreg) < as then breg <- mem[breg + oreg]\n   else error\n\nD. if ink is 1 then breg <- mem[breg + oreg]\n   else if (breg + oreg) < as then breg <- mem[as + breg + oreg]\n   else error\n\nE. if ink is 1 then breg <- mem[breg + oreg]\n   else if (breg + oreg) < (ab + as) then breg <- mem[ab + breg + oreg]\n   else error\n```",
+    "solution": "In the lectures the students saw an example for a store instruction. This question tests the application to a load instruction.\nThe correct definition should only allow the unrestricted load if ink == 1.\nOtherwise, offsets oreg are calculated from zero (to ensure relocatable programs).\nTherefore the resulting memory address breg + oreg should be lower than the highest allowed address size as, relative to zero. The correct comparison is (breg+oreg) < as.\nThe final memory access is offset by the application base ab to translate from the relocatable zero to the real position in memory.\nEach incorrect answer makes the wrong comparison and/or offset calculation.",
+    "category": "Hardware-support for Software"
+  },
+  {
+    "id": "111",
+    "question": "In adding protection to the Hex 8 ISA, we must ensure that only the kernel can access all memory addresses. To do this, we add a flag `ink` which is 1 if the processor is executing instructions associated with the kernel; or 0 otherwise. We also add two registers: `ab`, the application base memory address; and `as`, the application size.\n\nThe `LDAP` instruction was originally defined as follows:\n```text\nLDAP  areg <- pc + oreg\n```\nWhich of the following is the correct definition of a protected `LDAP` Hex 8 instruction?\n```text\nA. if ink is 1 then areg <- pc + oreg\n   else if (pc + oreg) < as then areg <- ab + pc + oreg\n   else error\n\nB. if ink is 0 then areg <- pc + oreg\n   else if (pc + oreg) < as then areg <- ab + pc + oreg\n   else error\n\nC. if ink is 1 then areg <- pc + oreg\n   else if (pc + oreg) < as then areg <- as + pc + oreg\n   else error\n\nD. if ink is 0 then areg <- pc + oreg\n   else if (pc + oreg) < as then areg <- as + pc + oreg\n   else error\n\nE. areg <- pc + oreg\n   i.e., no changes required.\n```",
+    "solution": "In the lectures the students saw an example for a store instruction. This question tests understanding of when protection is required.\nThis instruction uses the pc, which will be set to a value within the valid range the program can access. The instruction sets the areg to the sum of the pc and oreg, but does not try to access this address in memory. If this sum would take the value out of the valid range, the error would occur on an instruction trying to set the pc or access memory at this address, and not this instrution. Therefore, this instruction does not need modifying.\nThe other (incorrect) versions apply the transformation shows in the lecture to check the application base in various ways.",
+    "category": "Hardware-support for Software"
+  },
+  {
+    "id": "112",
+    "question": "What mechanism do operating system kernels use to schedule programs?\nA. Subroutine call\nB. Pipelining\nC. Interrupts\nD. Exceptions\nE. Memory protection",
+    "solution": "Interrupts (hardware and software) are used to return the execution into the kernel giving it an opportunity to schedule programs.\nThe other answers are spurious.",
+    "category": "Hardware-support for Software"
+  },
+  {
+    "id": "113",
+    "question": "Many programming languages support recursive subroutine calls; specifically, a subroutine is allowed to call itself. Hardware and software interact to make subroutine calls efficient.\nWhich of the following features puts a limit on the number of subroutine calls that a program can make on a given architecture?\nYou may assume the registers are wide enough to address any word in memory.\nA. The stack pointer register.\nB. The return address register.\nC. The number of architectural registers.\nD. The size of the stack.\nE. The size of the instruction cache.",
+    "solution": "This question asks to think about what resource would expire if there was infinite recursion.\nAs each subroutine call will push data onto a stack, for a very large number of calls, the stack memory would run out. This puts a limit on the number of subroutine calls, as beyond a certain point, no more calls could be supported without having to overwrite memory.\nThe registers are updated for each subroutine call and are independent on the number of subroutine calls made; their values are stored on the stack.\nThe instruction cache stores spatially close instructions, so will help the performance of a (small) recursive subroutine call.",
+    "category": "Hardware-support for Software"
+  },
+  {
+    "id": "114",
+    "question": "A program which is position independent is loaded into memory by the loader. The program is placed so that it begins at memory address P.\nWhich of the following classes of instructions in a Reduced Instruction Set Computer (RISC) architecture, such as the Hex8 Instruction Set Architecture (ISA), might the loader need to update, given the programs location in memory is now known?\nA. Arithmetic operations.\nB. Relative branch instructions.\nC. System or kernel calls.\nD. Logical instructions.\nE. Memory load and store instructions.",
+    "solution": "Mainly a fact check of information synthesised from lecture material. The lectures show how a store instruction might need to be modified given an application base, but the same procedure would apply to all memory access instructions.\nBranch instructions will modify the program counter, which will be set to P when the program is loaded. Relative branches will not be affected by the programs position in memory; absolute branches would, but the choice above states “relative”.",
+    "category": "Hardware-support for Software"
+  },
+  {
+    "id": "115",
+    "question": "A bus is used to communicate data between the CPU and memory, which operate on different clocks frequencies. A number of signal/control wires are used to implement a communication protocol between the CPU and memory.\nThe CPU requests data from memory by sending the appropriate signals for a read. How does CPU know that the data has arrived and it is safe to copy from the bus?\nA. The data has arrived after the memory signals is it ready.\nB. The data has arrived after a fixed number of CPU cycles.\nC. The data has arrived after a fixed number of memory cycles.\nD. The data has arrived after the CPU signals it is ready.\nE. The data arrives after a fixed number of both CPU and memory cycles.",
+    "solution": "This question tests the different situations where synchronous and asyn- chronous buses are used, and how they work at a high level. The key detail is that the CPU and memory have different clocks, and so an asynchronous bus must be used, which operates on control signals rather than against the clock. Therefore, the data arrives once the memory tells the CPU it’s on the bus.",
+    "category": "Hardware-support for Software"
+  },
+  {
+    "id": "116",
+    "question": "A program has a bug. During execution, an instruction is issued which attempted integer division by zero. The Arithmetic Logic Unit stores this information in the status register.\nWhat type of error is this known as?\nA. Asynchronous Interrupt.\nB. Synchronous Exception.\nC. Asynchronous Error.\nD. Overflow.\nE. Carry.",
+    "solution": "Because the error occurred as a result of instruction execution, the error is a synchronous exception.\nAn interrupt happens asynchronously, and externally from the processor, so this is incorrect. Divide by zero is not a carry or overflow.",
+    "category": "Hardware-support for Software"
+  },
+  {
+    "id": "117",
+    "question": "One of my programs has a bug, and I want to use a debugger to try to find where in the program the issue occurs. I set a breakpoint to stop execution of my program just before a subroutine call so I can investigate the program state interactively.\nWhat mechanism could the processor provide to support this?\nA. Timing interrupts.\nB. Software interrupts.\nC. Hardware interrupts.\nD. A system call to enable printing to the screen.\nE. Exceptions.",
+    "solution": "The question hints I want to stop the program at a specific point in the program. Debuggers usually set breakpoints by replacing instructions with software interrupts.\nA timing interrupt would stop the program after a given time, which is not necessarily at a specific point in the program source.\nA debugger must interact with the kernel (via software interrupts), but simply pro- viding printf() support alone would not let me explore the state interactively.\nExceptions would create errors in the program, which could be caught by a debugger, but again, it doesn’t stop at a specific point (a subroutine) in the program source.",
+    "category": "Hardware-support for Software"
+  },
+  {
+    "id": "118",
+    "question": "A keyboard is used to input text characters into a processor. When a key is pressed, the keyboard sends an 8-bit signal to the system. An interrupt handler is used to copy that signal into a buffer in memory, storing it as a text character. The interrupt handler also updates a counter which contains the number of characters currently in the buffer.\nYou are writing a print program that displays the characters entered on the keyboard. In other words, your program prints the contents of the memory buffer to the screen, clears the memory buffer, and then the program ends.\nThe program is intended to be run by a privileged user, with full access to the entire memory space.\nIn order to ensure correct operation, why should interrupts be disabled when the print program is running.\nA. The interrupt handler would miss future keyboard presses while the print pro- gram is running.\nB. The interrupt handler needs to restore the state of the print program after running.\nC. The interrupt handler and the printing program could change the value stored in the counter at the same time.\nD. The print program cannot change the value in registers.\nE. The print program cannot change the data in memory.",
+    "solution": "If interrupts were not disabled, the interrupt handler could try to increment the counter whilst the print program is reading/writing this value. In addition, the counter is used to show the offset in memory to append new characters to the buffer; and so data can be lost if the interrupt handler ran and overwrote data in the buffer.\nTherefore, interrupts should be disabled to prevent this memory race.\nThe print program can of course change the data in memory (the question says it will), and it will use registers. The statements about the interrupt handler are true, however are not the reasons why interrupts should be disabled.",
+    "category": "Hardware-support for Software"
+  },
+  {
+    "id": "119",
+    "question": "The x86 Instruction Set Architecture (ISA) has a HLT (halt) instruction. This instruc- tion takes no operands and is only available under privileged execution (by the kernel).\nThe effect of the instruction is to stop the execution of the processor, i.e., no further instructions will be executed.\nHow could the processor recover from this instruction and continue executing the kernel, maintaining the architectural state of the processor (registers and memory)?\nA. The processor cannot be restarted.\nB. Reset the power source.\nC. Resume after an external interrupt occurs.\nD. Resume after a software interrupt occurs.\nE. Resume executing a non-privileged program.",
+    "solution": "The HLT instruction stops execution until an interrupt occurs.\nAs the processor has ceased execution, it is unable to process further instructions (like software interrupts, or a non-privileged program). Rebooting the processor would cause the state of registers and (DRAM) memory to be erased.",
+    "category": "Hardware-support for Software"
+  },
+  {
+    "id": "120",
+    "question": "Consider the following instructions:\n```text\nXADD r1, r2   temp <- r1 + r2; r2 <- r1; r1 <- temp\nADD  r1, r2   r1 <- r1 + r2; set the carry flag (CF) if the result overflowed\n```\nThese are inspired by the x86 ISA, and operate on 4-bit registers. If we set `r1 = 0` and `r2 = 1`, then execute the following program:\n```text\nxadd r1, r2\nadd  r1, r2\nxadd r1, r2\nadd  r1, r2\nxadd r1, r2\nadd  r1, r2\nxadd r1, r2\n...\n```\nWhat sequence of values does the register `r1` take?\nA. r1 = 0, 1, 1, 2, 3, 5, 8, 13, ...\nB. r1 = 0, 1, 1, 1, 2, 3, 5, 7, ...\nC. r1 = 0, 1, 1, 1, 2, 2, 5, 8, ...\nD. r1 = 1, 0, 0, 1, 1, 2, 2, 5, ...\nE. r1 = 1, 0, 0, 1, 1, 3, 3, 5, ...",
+    "solution": "The XADD instruction computes the sum of the registers, storing the source `r1` in `r2` and storing the result in `r1`. The ADD instruction computes the sum of the registers, storing the result in `r1`, leaving `r2` unmodified.\n\nThe registers therefore take the following values:\n```text\nr1  r2\n0   1\n1   0   xadd\n1   0   add\n1   1   xadd\n2   1   add\n3   2   xadd\n5   2   add\n7   5   xadd\n...\n```",
+    "category": "Assembly and Assemblers"
+  },
+  {
+    "id": "121",
+    "question": "During the assembly of an assembly program, labels are resolved. Consider the following Hex 8 assembly program:\n```text\nLine 1 - ldbc loop\nLine 2 - loop: ldac 0\nLine 3 - add\nLine 4 - br loop\n```\nDuring label resolution, what constant offsets are the operands on Line 1 (`loop`) and Line 4 (`loop`) replaced with?\nA. Line 1 becomes br -1 and line 4 becomes ldbc -1\nB. Line 1 becomes br 4 and line 4 becomes ldbc 4\nC. Line 1 becomes br 0 and line 4 becomes ldbc 4\nD. Line 1 becomes br 0 and line 4 becomes ldbc 0\nE. Line 1 becomes ldbc 2 and line 4 becomes br -3",
+    "solution": "After label resolution the program will be:\n```text\nLine 1 - ldbc 2\nLine 2 - ldac 0\nLine 3 - add\nLine 4 - br -3\n```\nThe Hex 8 processor has an execution cycle of Fetch/Increment PC/Execute. The BR instruction computes `pc <- pc + oreg`. Just before line 4 BR is executed `pc = 5`. Therefore to set `pc = 2`, the operand must be -3.\n\nOn line 1, the LDBC instruction sets `breg <- oreg`. With an operand of the label `loop`, this instruction needs the address of the label. Therefore the operand must be 2.",
+    "category": "Assembly and Assemblers"
+  },
+  {
+    "id": "122",
+    "question": "During the assembly of an assembly program into machine code, labels are resolved.\nConsider the following Hex 8 assembly program:\nLine 1 - BR L1\nLine 2 - L2\nLine 3 - DATA 1\nLine 4 - L3\nLine 5 - DATA 1\nLine 6 - L1\nLine 7 - LDBM L2\nLine 8 - LDAM L3\nLine 9 - STAM L2\nLine 10 - ADD\nLine 11 - STAM L3\nLine 12 - LDBC 8\nLine 13 - SUB\nLine 14 - BRN L1 During label resolution, the labels on lines 7, 8, 9, 11 and 14 are resolved. What constant values are they replaced with, respectively? Assume no extra instructions are created.\nRecall the Hex 8 execution cycle: Fetch, Increment program counter ( P C), Execute. You may assume that the P C is set to the line number when that line is fetched.\nA. 2, 4, 2, 4, -8\nB. 3, 5, 3, 5, 8\nC. -4, -3, -6, -6, -8\nD. 2, 4, 2, 4, 8\nE. 3, 5, 3, 5, -8",
+    "solution": "This Hex 8 program generates the Fibonacci numbers in memory up to 8.\nL1 refers to the instruction on Line 7. L2 refers to the instruction on Line 3. L3 refers to the instruction on Line 5.\nThe LDAM, LDBM, and STAM instructions all take immediate values for the label. Hence, L2 = 3 on lines 7 and 9, and L3 = 5 on lines 8 and 11.\nThe BRN instruction updates the P C, and so the relative offset must be used. The P C is incremented after fetch, and before execute, so the P C is one greater than the line number. Hence, L1 resolves to 7 − 15 = −8 on Line 14.",
+    "category": "Assembly and Assemblers"
+  },
+  {
+    "id": "123",
+    "question": "During the assembly of an assembly program into machine code, labels are resolved.\nConsider the following Hex 8 assembly program:\nLine 1 - L1\nLine 2 - DATA 15\nLine 3 - L2\nLine 4 - LDBC 1\nLine 5 - LDAM L1\nLine 6 - SUB\nLine 7 - STAM L1\nLine 8 - BRZ L3\nLine 9 - BR L2\nLine 10 - L3\nLine 11 - LDAC 15\nLine 12 - STAM L1 During label resolution, the labels L1, L2 and L3 on lines 5, 7, 8, 9 and 12 are resolved.\nWhat constant values are they replaced with, respectively? Assume no extra instructions are created.\nRecall the Hex 8 execution cycle: Fetch, Increment program counter P C, Execute. You may assume that the P C is set to the line number when that line is fetched.\nA. -4, -6, 2, -6, -11.\nB. -4, -6, 3, -5, -11.\nC. 2, 2, 3, -5, 2.\nD. 2, 2, 4, 11, 2.\nE. 2, 2, 2, -6, 2.",
+    "solution": "The Hex 8 program counts from 15 to zero.\nL1 refers to the instruction on Line 2. L2 refers to the instruction on Line 4. L3 refers to the instruction on Line 11.\nThe LDAM and STAM instructions all take immediate values for the operand, and so the labels take their absolute value. Hence, L1 on lines 5, 7 and 12 all resolve to 2.\nThe branch instructions BRZ and BR update the P C, and so a relative offset must be used. The P C is incremented after fetch, and before execute, so the P C is one greater than the line number. On Line 8, P C = 9, and so L3 resolves to 11 − 9 = 2 .\nOn Line 9, P C = 10, and so L2 resolves to 4 − 10 = −6.",
+    "category": "Assembly and Assemblers"
+  },
+  {
+    "id": "124",
+    "question": "During the assembly of an assembly program into machine code, labels are resolved.\nConsider the following Hex 8 assembly program:\nLine 1 - BR L1\nLine 2 - L2\nLine 3 - DATA 1\nLine 4 - DATA 2\nLine 5 - DATA 3\nLine 6 - DATA 4\nLine 7 - DATA 5\nLine 8 - L3\nLine 9 - DATA 0\nLine 10 - L1\nLine 11 - LDAC L3\nLine 12 - LDAI L2\nLine 13 - LDBM L3\nLine 14 - ADD\nLine 15 - LDBI L2\nLine 16 - STAI L3 During label resolution, the labels on lines 1, 11, 12, 13, 15 and 16 are resolved. What constant values are they replaced with, respectively? Assume no extra instructions are created.\nRecall the Hex 8 execution cycle: Fetch, Increment program counter ( P C), Execute. You may assume that the P C is set to the line number when that line is fetched.\nA. 11, 9, 3, 9, 3, 9\nB. 9, 1, 8, 3, 11, 6\nC. 9, 9, 3, 9, 3, 9\nD. 11, 3, 9, 3, 9, 3\nE. 9, 9, 9, 9, 9, 9",
+    "solution": "This Hex 8 program uses indirect memory accesses.\nL1 refers to the instruction on Line 11. L2 refers to the instruction (data) on Line 3.\nL3 refers to the instruction (data) on Line 9.\nThe LDAC, LDAI, LDBM LDBI and STAI instructions all take immediate values for the label. Hence, L2 = 3 on lines 12 and 15, and L3 = 9 on lines 11, 13 and 16.\nThe BR instruction updates the P C, and so the relative offset must be used. The P C is incremented after fetch, and before execute, so the P C is one greater than the line number. Hence, L1 resolves to 11 − 1 − 1 = 9 on Line 1.",
+    "category": "Assembly and Assemblers"
+  },
+  {
+    "id": "125",
+    "question": "Which of these tasks is not performed by a compiler?\nA. Optimisation\nB. Parsing\nC. Machine code output\nD. Application base memory location\nE. Linking",
+    "solution": "The kernel is responsible for placing the compiled program in memory thus determining it’s base memory location.\nAll the others are functions of the compiler toolchain.",
+    "category": "Compilers"
+  },
+  {
+    "id": "126",
+    "question": "Explain the following compiler optimisations:\n1. Common subexpression elimination\n2. Dead code elimination\n3. Constant folding\n4. Hoist loop invariants\n5. Function inlining\n6. Loop induction variables\n7. Strength reduction",
+    "solution": "These are defined in the lecture slides.",
+    "category": "Compilers"
+  },
+  {
+    "id": "127",
+    "question": "Consider the following extract from a C program:\nint i, j; int A[80]; for (i = 0; i < 8; ++i) { for (j = 0; j < 10; ++j) { int k = i * 10 + j; A[k] = j * 10 + i; } } Apply the strength reduction optimisation to this program.\nHow many additions and multiplications now occur in total, excluding the increments to i and j in the for loops?\nA. 116 additions and zero multiplications.\nB. 28 additions and zero multiplications.\nC. 168 additions and zero multiplications.\nD. 28 additions and 2 multiplications.\nE. 256 additions and zero multiplications.",
+    "solution": "It has a number of steps, including counting at the end to answer the question directly.\nThere are two loops, so we apply the optimisation twice. For the inner j loop, the result of the optimisation is:\nint i, j; int A[80]; for (i = 0; i < 8; ++i) { int l = i * 10 + 0; int m = 0 * 10 + i; for (j = 0; j < 10; ++j) { A[l] = m; l = l + 1; m = m + 10; } } Now, applying it to the i loop. Note that in the above m == i , so we don’t need to do anything to it, and the optimisation is only applied to l.\nint i, j; int A[80]; int p = 0; for (i = 0; i < 8; ++i) { int l = p; int m = i; for (j = 0; j < 10; ++j) { A[l] = m; l = l + 1; m = m + 10; } p = p + 10; } There are therefore 10 × 2 additions in the j loop. Each iteration of the i loop performs the 20 additions for the j loop and 1 more, for a total of 8 × 21 = 168 additions, and zero multiplications.",
+    "category": "Compilers"
+  },
+  {
+    "id": "128",
+    "question": "Consider the following extract from a C program:\nint i; int j = 3; int A[16]; for (i = 0; i < 16; ++i) { A[i] = i*16 + j; } Apply the strength reduction optimisation to this program.\nHow many additions and multiplications now occur in total, excluding the increment to i in the for loop?\nA. 16 additions and one multiplications.\nB. 32 additions and one multiplications.\nC. 16 additions and zero multiplications.\nD. 32 additions and zero multiplications.\nE. 16 additions and 16 multiplications.",
+    "solution": "The result of the optimisation is:\nint i; int j = 3; int A[16]; int k = j; for (i = 0; i < 16; ++i) { A[i] = k; k = k + 16; } There is therefore only one addition in the loop. There are 16 iterations of the loop, so the answer is 16 additions and zero multiplications.",
+    "category": "Compilers"
+  },
+  {
+    "id": "129",
+    "question": "Consider the following extract from a C program:\nint function(int x) { const int N = 12; int a = 2 * N + x; int b = 2 * N + x + 1; int c = 3 * N; int d = c + a; return a + b; } An optimising C compiler might apply a number of transformations to this program to reduce the cost to execute it.\nWithout optimisation, the function would perform 3 multiplications and 5 addition oper- ations.\nApply the following optimisations to the above program.\n• Common subexpression elimination.\n• Constant folding.\n• Dead code elimination.\nAfter applying the optimisations, in the order given, how many multiplications and addition operations must be performed?\nA. 3 multiplications and 5 additions.\nB. 3 multiplications and 4 additions.\nC. 1 multiplications and 3 additions.\nD. 0 multiplications and 3 additions.\nE. 0 multiplications and 4 additions.",
+    "solution": "After application of common subexpression elimination, the program would look as follows:\nint function(int x) { const int N = 12; int a = 2 * N + x; int b = a + 1; int c = 3 * N; int d = c + a; return a + b; } After constant folding, the program would look as follows:\nint function(int x) { const int N = 12; int a = 24 + x; int b = a + 1; int c = 36; int d = c + a; return a + b; } Finally, after dead code elimination, the program would look as follows:\nint function(int x) { int a = 24 + x; int b = a + 1; return a + b; } Therefore, there are 3 additions, and 0 multiplications.\nFurther optimisation is possible, but these would not reduce the arithmetic beyond this minimum. It therefore does not really matter is the solution is obtained by some other means.",
+    "category": "Compilers"
+  },
+  {
+    "id": "130",
+    "question": "Consider the following extract from a C program:\nconst int N = 25; int A[25]; int B[25]; for (int i = 0; i < N; ++i) { A[i] = i + 12; int j = i + N; int k = i + 12; B[i] = i + 12 + N; } An optimising C compiler might apply a number of transformations to this program to reduce the cost to execute it.\nWithout optimisation, the function would perform 25 × 6 = 150 addition operations.\nApply the following optimisations to the above program.\n• Common subexpression elimination.\n• Constant folding.\n• Dead code elimination.\nAfter applying the optimisations, in the order given, how many addition operations must be performed?\nA. 2\nB. 25\nC. 50\nD. 75\nE. 100",
+    "solution": "Application of a procedure from the lectures. It has a number of steps, including counting at the end to answer the question directly.\nAfter application of common subexpression elimination, the program would look as follows:\nconst int N = 25; int A[25]; int B[25]; for (int i = 0; i < N; ++i) { int a = i + 12; A[i] = a; int j = i + N; int k = a; B[i] = a + N; } After constant folding, the program would look as follows:\nconst int N = 25; int A[25]; int B[25]; for (int i = 0; i < N; ++i) { int a = i + 12; A[i] = a; int j = i + 25; int k = a; B[i] = a + 25; } Note that because common subexpression was performed first, the final line still contains a + operation after constant folding.\nFinally, after dead code elimination, the program would look as follows:\nconst int N = 25; int A[25]; int B[25]; for (int i = 0; i < N; ++i) { int a = i + 12; A[i] = a; B[i] = a + 25; } Therefore, there are 2 additions in the loop body and one to increment i each iteration.\nThere are 25 iterations, therefore 25 × 3 = 75 additions.",
+    "category": "Compilers"
+  },
+  {
+    "id": "131",
+    "question": "A compiler is used to translate programs written in a high-level programming language to machine code (`MC`). When a new programming language is developed, a compiler must be written to support this new language. This process is often known as bootstrapping.\n\nI have developed a new programming language called Blue, and implement a compiler in my second-favourite programming language, C, so that I can compile a program written in Blue. I then implement a Blue compiler in the Blue language.\n\nWhich of the Tombstone diagrams (T-diagrams) shown below correctly represents this bootstrapping process for my Blue compiler? You may assume a C compiler already exists.\n```text\nA.\n  Blue -> MC\n  implemented in Blue\n\n  Blue -> MC\n  implemented in C\n\nB.\n  Blue -> MC\n  implemented in Blue\n\n  Blue -> MC\n  implemented in C\n\n  C -> MC\n  implemented in Blue\n\nC.\n  Blue -> C\n  implemented in MC\n\n  C -> MC\n  implemented in C\n\nD.\n  Blue -> MC\n  implemented in Blue\n\n  Blue -> MC\n  implemented in MC\n\nE.\n  Blue -> MC\n  implemented in C\n\n  C -> Blue\n  implemented in MC\n```",
+    "solution": "Each Tombstone (T-diagram) shows a compiler. There are two compilers in the question:\n1. A Blue-to-`MC` compiler, written in Blue.\n2. A Blue-to-`MC` compiler, written in C.\n\nTherefore, the first compiler can be built with the second, giving a path from Blue to `MC`.\n\nOption B shows a third C compiler, which the question assumes already exists, so it does not need to be shown. The question also does not state what this C compiler is written in; option B shows it implemented in Blue, which is not correct.\n\nThe other options jumble the source, target, or implementation languages, producing incorrect diagrams.",
+    "category": "Compilers"
+  }
+]
