@@ -1,30 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import Papa from 'papaparse';
 import Flashcard from './Flashcard';
+import FsSetFrame from './FsSetFrame';
 
 export default function Controller() {
 
-    const [card, setCard] = useState(null)
+    
     const [cards, setCards] = useState([])
-    const [usedNumbers, setUsedNumbers] = useState([])
-
-    function getRandomCard() {
-        let availableUsedNumbers = usedNumbers;
-
-        if (availableUsedNumbers.length >= cards.length - 1) {
-            availableUsedNumbers = [];
-        }
-
-        let randomNum;
-        do {
-            randomNum =
-                Math.floor(Math.random() * cards.length);
-        }
-        while (usedNumbers.includes(randomNum));
-
-        setUsedNumbers([...availableUsedNumbers, randomNum]);
-        setCard(cards[randomNum])
-    }
+    
 
 
     useEffect(() => {
@@ -50,18 +33,8 @@ export default function Controller() {
                     <h1 className='text-2xl'>COMS10015 Revision Flashcards</h1>
                     <p className='text-xs'>by Rob (and shoutout to Dan Page)</p>
                 </div>
-                <div>
-                    <button onClick={() => getRandomCard()}>Get random question {cards.length - usedNumbers.length}/{cards.length}</button>
-                </div>
             </div>
-            <div className="flex flex-col gap-5 justify-center items-center grow">
-                {
-                    card == null ?
-                        <p>Choose a random card</p>
-                        :
-                        <Flashcard question={card.question} answer={card.solution} />
-                }
-            </div>
+            <FsSetFrame dataset={cards} />
 
         </div>
     )
