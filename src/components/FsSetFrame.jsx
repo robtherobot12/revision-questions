@@ -3,53 +3,57 @@ import Flashcard from './Flashcard';
 
 export default function FsSetFrame({ dataset }) {
 
-    const [card, setCard] = useState(null)
-    const [usedNumbers, setUsedNumbers] = useState([])
+    const [cardIndex, setCardIndex] = useState(0)
     const [cardNums, setCardNums] = useState([])
 
+    const card =
+    cardNums.length > 0
+        ? dataset[cardNums[cardIndex]]
+        : null;
+
     useEffect(() => {
-        let nums = []
-      for (let i = 0; i < dataset.length; i++) {
-        nums.push(i);
-      }
-      setCardNums(nums)
+        shuffle()
     }, [dataset])
-    
+
+    function shuffle() {
+        let nums = []
+        let randomOrderNums = []
+        for (let i = 0; i < dataset.length; i++) {
+            nums.push(i);
+        }
+        for (let i = 0; i < dataset.length; i++) {
+            let n = Math.floor(Math.random() * nums.length)
+            randomOrderNums.push(nums[n])
+            nums.splice(n, 1)
+        }
+        setCardNums(randomOrderNums)
+        setCardIndex(0)
+    }
+
 
     function getPreviousCard() {
-
+        
+        if (cardIndex - 1 >= 0) {
+            setCardIndex(cardIndex - 1)
+        }
+        
     }
 
     function getRandomCard() {
-        // let availableUsedNumbers = usedNumbers;
-
-        // if (availableUsedNumbers.length >= dataset.length - 1) {
-        //     availableUsedNumbers = [];
-        // }
-
-        // let randomNum;
-        // do {
-        //     randomNum =
-        //         Math.floor(Math.random() * dataset.length);
-        // }
-        // while (usedNumbers.includes(randomNum));
-
-        let randomNum = Math.floor(Math.random() * cardNums.length);
-        let cardNum = cardNums[randomNum]
-
-        console.log(cardNums)
-        console.log(randomNum)
-        console.log(cardNum)
-        setCardNums(cardNums.splice(randomNum, 1))
-        console.log(cardNums)
-        setUsedNumbers([...usedNumbers, cardNum]);
-        setCard(dataset[cardNum])
+        
+        if (cardIndex + 1 >= dataset.length) {
+            shuffle()
+        } else {
+            setCardIndex(cardIndex + 1)
+        }
     }
 
     return (
         <div>
-            <div>
-                <button onClick={() => getRandomCard()}>Get random question {dataset.length - usedNumbers.length}/{dataset.length}</button>
+            <div className="flex items-center ml-4 gap-2">
+                <button onClick={() => getPreviousCard()}>←</button>
+                <button onClick={() => getRandomCard()}>→</button>
+                <p>Get random question {dataset.length - cardIndex}/{dataset.length}</p>
             </div>
             <div className="flex flex-col gap-5 justify-center items-center grow">
                 {
